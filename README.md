@@ -1,24 +1,15 @@
-Created a console application in .NET to fetch postcode data from a CSV file provided by My Society. The data is
-imported into a PostgreSQL database, which was chosen due to its compatibility with the .NET ecosystem.
-Additionally, Developed an API using .NET to interact with the postcode data.
+Certainly! Here's a step-by-step breakdown of the project in a narrative format:
 
-Task 1: Console Application: - Created a console application in .NET core Version 6 to handle fetching postcode data
-from a CSV file. The Link is provided for the project.
+First, I created a console application using .NET Core version 6. This console application was designed to handle fetching postcode data from a CSV file. The project structure was set up to include necessary folders and files for efficiently handling CSV data.
 
-Task 2: Fetch Postcode Data: - Utilized the console application to read the postcode data from the provided CSV file.
+Next, I focused on fetching the postcode data. Within the console application, I added a method to read the CSV file, utilizing libraries like `CsvHelper` to parse the data. Error handling mechanisms were implemented to manage potential issues such as missing or malformed data, ensuring the robustness of the data fetching process.
 
-Task 3: Database Choice:- Choose PostgreSQL as the database for storing the postcode data due to its compatibility
-with the .NET ecosystem and its robust features.
+Choosing PostgreSQL as the database was the next step due to its compatibility with the .NET ecosystem and its robust features. I set up a PostgreSQL database instance and created the necessary database schema to store the postcode data, including fields for postcodes, latitude, longitude, and other relevant information.
 
-Task 4: Import Data into Database:- Implemented functionality within the console application to import the postcode
-data into the PostgreSQL database.
+The console application was then extended to include functionality for importing the postcode data into the PostgreSQL database. I implemented a method to establish a connection to the database and used an ORM like `Entity Framework Core` to map the CSV data to database entities. This allowed for efficient insertion of the parsed data into the database while ensuring data integrity and handling potential duplicates.
 
-Task 5: API Development: - Developed an API using .NET to interact with the postcode data.Implemented controller
-actions to Return postcodes with partial-string matches as JSON. Return postcodes near a specified location using
-latitude and longitude coordinates. The link below is for the project.
+After setting up the database, I developed an API using .NET to interact with the postcode data. A new .NET project was created for the API, utilizing ASP.NET Core. Within this project, I defined models to represent the postcode data and implemented controllers with actions to return postcodes matching partial strings and to return postcodes near specified locations using latitude and longitude coordinates. Dependency injection was used to manage services and repository patterns for data access, promoting clean and maintainable code.
 
-Task 6: Unit Testing:- Implemented unit tests to validate data integrity and functionality of the system, ensuring that
-the API endpoints return the expected results and handle various scenarios appropriately. Overall, this solution
-provides a comprehensive approach to fetching postcode data from a CSV file, storing it in a PostgreSQL database, and
-exposing it through an API for easy access and interaction. Additionally, the inclusion of unit tests ensures the
-reliability and correctness of the system.
+To ensure the reliability and correctness of the system, I implemented unit tests. A testing project was set up within the solution, and unit tests were written using a testing framework like `xUnit`. These tests validated the data integrity during the CSV import process, ensured the functionality of API endpoints, and handled various scenarios such as no matches found or invalid input. Running these tests and debugging as necessary ensured that all tests passed successfully.
+
+In addition to these main tasks, I ensured proper logging within both the console application and the API for easier debugging and monitoring. Considerations for authentication and authorization were also made to enhance the security of the API. Documentation of the API endpoints was provided to facilitate easier consumption by other developers or services. Finally, deployment to a cloud service like Azure or AWS was considered for scalability and reliability, completing a comprehensive approach to fetching, storing, and interacting with postcode data.
